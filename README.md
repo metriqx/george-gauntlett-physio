@@ -5,13 +5,13 @@ Bradford-on-Avon.
 
 ## Structure
 
-Two hand-authored HTML pages, no build step. All CSS and JS are inline, and all
-images are embedded as base64 data URIs, so the pages are fully self-contained.
+One hand-authored HTML page, no build step. All CSS and JS are inline, and all
+images are embedded as base64 data URIs, so the page is fully self-contained.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Single-page main site: hero, about, services, the 3 R's, fees, contact, location, FAQs |
-| `conditions-treated.html` | Interactive body map of conditions treated |
+| `index.html` | The whole site: hero, about, services, the 3 R's, conditions treated (interactive body map), fees, contact, location, FAQs |
+| `conditions-treated.html` | Redirect stub only — the old standalone page was folded into `index.html#conditions` |
 
 `.nojekyll` stops GitHub Pages from running Jekyll over the files.
 
@@ -43,6 +43,8 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
 - The 3 R's section uses `.section-approach-light`; its light styling overrides
   live in the `<style>` block near the "Light treatment for the 3 R's section"
   comment in `index.html`.
-- Navigation and footer links are duplicated in both pages; change both.
 - Cancellation policy (48 hours) appears twice in `index.html`: the fees small
   print and the FAQ entry.
+- The body map is driven by `.injury-marker` elements whose `data-title`,
+  `data-description` and pipe-separated `data-items` fill the popup. Marker
+  coordinates are percentage `top`/`left` rules named `.marker-*`.
