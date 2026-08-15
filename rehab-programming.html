@@ -631,14 +631,19 @@
     .cta-band h2 { margin-bottom: 7px; font-size: clamp(2.1rem, 4vw, 3.55rem); }
     .cta-band p { margin: 0; color: rgba(13,40,69,.76); }
 
-    footer { padding: 58px 24px 30px; background: #081d30; color: rgba(255,255,255,.68); }
+    footer { padding: 58px 24px calc(30px + env(safe-area-inset-bottom)); background: #081d30; color: rgba(255,255,255,.68); }
     .footer-inner { max-width: var(--max); margin: auto; }
-    .footer-top { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; padding-bottom: 42px; }
+    .footer-top { display: grid; grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 26px; padding-bottom: 38px; }
     .footer-logo { width: 300px; padding: 12px 18px; border-radius: 16px; background: var(--white); }
     .footer-tag { margin-top: 14px; color: #c5d3ca; font-family: "Montserrat", sans-serif; font-size: .69rem; letter-spacing: .2em; text-transform: uppercase; }
-    .footer-links { display: flex; flex-wrap: wrap; align-content: start; justify-content: flex-end; gap: 14px 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; align-content: start; justify-content: center; gap: 14px 24px; }
     .footer-links a { color: rgba(255,255,255,.78); text-underline-offset: 4px; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.13); font-size: .78rem; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; gap: 8px 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.13); font-size: .78rem; }
+    /* Reserve space for the fixed Book online / Get in Contact buttons so
+       they never sit over the footer links when scrolled to the bottom. */
+    @media (min-width: 721px) {
+      footer { padding-bottom: 168px; }
+    }
 
     .reveal { opacity: 1; transform: none; transition: opacity .62s ease, transform .62s ease; }
     .reveal.reveal-pending { opacity: 0; transform: translateY(18px); }
