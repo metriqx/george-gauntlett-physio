@@ -1,7 +1,6 @@
 # George Gauntlett Physio
 
-Static marketing site for George Gauntlett Physio, Church Street Practice,
-Bradford-on-Avon.
+Static marketing site for George Gauntlett Physio, Bradford-on-Avon.
 
 ## Structure
 

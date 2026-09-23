@@ -9,7 +9,7 @@
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="default" name="apple-mobile-web-app-status-bar-style"/>
 <meta content="#1a3a56" name="theme-color"/>
-<meta content="Common musculoskeletal, sports and post-operative conditions assessed and rehabilitated by George Gauntlett at Church Street Practice, Bradford-on-Avon." name="description"/>
+<meta content="Common musculoskeletal, sports and post-operative conditions assessed and rehabilitated by George Gauntlett in Bradford-on-Avon." name="description"/>
 <meta content="George Gauntlett Physio | Bradford-on-Avon" property="og:title"/>
 <meta content="Resolve pain. Rebuild confidence. Return to what you love." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -1647,26 +1647,17 @@
     .location-actions .button { min-width: 220px; }
     @media (max-width: 720px) { .location-actions .button { width: 100%; } }
     </style>
+<!-- TODO: reinstate telephone, hasMap and address in the MedicalBusiness schema once a new practice location and booking system are confirmed. -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "George Gauntlett Physio",
   "url": "https://www.georgegauntlettphysio.co.uk/",
-  "description": "Chartered physiotherapist George Gauntlett provides musculoskeletal assessment, treatment and rehabilitation at Church Street Practice in Bradford-on-Avon, Wiltshire.",
+  "description": "Chartered physiotherapist George Gauntlett provides musculoskeletal assessment, treatment and rehabilitation in Bradford-on-Avon, Wiltshire.",
   "areaServed": "Bradford-on-Avon, Wiltshire",
   "medicalSpecialty": "Physiotherapy",
-  "hasMap": "https://maps.google.com/?cid=6654913316420847187",
-  "telephone": "+441225868282",
   "email": "george@georgegauntlettphysio.co.uk",
   "priceRange": "££",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Church Street Practice, 15a Church Street",
-    "addressLocality": "Bradford-on-Avon",
-    "addressRegion": "Wiltshire",
-    "postalCode": "BA15 1LN",
-    "addressCountry": "GB"
-  },
   "founder": {
     "@type": "Person",
     "name": "George Gauntlett",
@@ -1829,13 +1820,13 @@ body.booking-modal-open { overflow: hidden; }
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div aria-label="Quick actions" class="floating-actions">
-<a aria-controls="booking-modal" aria-haspopup="dialog" aria-label="Book online at Church Street Practice" class="floating-action floating-action-book" data-booking-trigger="" href="#booking-modal">Book online</a>
+<a aria-controls="booking-modal" aria-haspopup="dialog" aria-label="Book online" class="floating-action floating-action-book" data-booking-trigger="" href="#booking-modal">Book online</a>
 <a aria-label="Get in contact and start the conversation" class="floating-action floating-action-contact" href="index.html#enquiry-form">Get in Contact</a>
 </div>
 <header class="site-header">
 <div class="announcement" role="status">
 <span class="announcement-label"><span aria-hidden="true" class="announcement-dot"></span>Clinic update</span>
-<span class="announcement-message"><strong>Appointments available from 2 September 2026</strong><span aria-hidden="true" class="announcement-separator">•</span>Church Street Practice, Bradford-on-Avon</span>
+<span class="announcement-message"><strong>Appointments available from 2 September 2026</strong></span>
 </div>
 <div class="nav-wrap">
 <a aria-label="George Gauntlett Physio home" class="brand" href="index.html#top">
@@ -1912,7 +1903,7 @@ body.booking-modal-open { overflow: hidden; }
 </div>
 <p class="conditions-note conditions-note-inline reveal">Post-operative documentation is required so rehabilitation can follow the surgeon’s instructions and agreed precautions.</p>
 </div>
-<div aria-label="Practice location" class="location-signature">Church Street Practice · Bradford-on-Avon · BA15 1LN</div></section>
+<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
 <section aria-labelledby="page-cta-title" class="physio-link-banner">
 <div class="physio-link-banner-inner">
 <div class="physio-link-banner-copy">
@@ -2480,22 +2471,13 @@ body.booking-modal-open { overflow: hidden; }
 <button aria-label="Close booking options" class="booking-modal-close" data-close-booking-modal="" type="button">×</button>
 <p class="eyebrow">Booking options</p>
 <h2 id="booking-modal-title">How would you like to book?</h2>
-<p class="booking-modal-intro">Call Church Street Practice or book online through the practice booking system.</p>
+<!-- TODO: online booking is unavailable while the practice location is unconfirmed. Reinstate phone and online booking options once a new address/booking system is set. -->
+<p class="booking-modal-intro">Online booking is temporarily unavailable. Please get in touch and George will arrange your appointment.</p>
 <div class="booking-modal-options">
-<a class="button button-outline booking-option booking-phone-option" href="tel:+441225868282" id="booking-phone-option">
-<span class="booking-option-title">Call 01225 868 282</span>
-<span class="booking-option-detail">Church Street Practice</span>
+<a class="button button-primary booking-option" href="index.html#enquiry-form">
+<span class="booking-option-title">Get in contact</span>
+<span class="booking-option-detail">George will reply to arrange your appointment</span>
 </a>
-<a class="button button-primary booking-option booking-online-option" href="https://hpbookingonline.co.uk/churchstreet/" rel="noopener noreferrer" target="_blank">
-<span class="booking-option-title">Book online</span>
-<span class="booking-option-detail">Open the Church Street Practice booking system</span>
-</a>
-</div>
-<div aria-live="polite" class="desktop-phone-number" hidden="" id="desktop-phone-number">
-<span>Church Street Practice</span>
-<strong>01225 868 282</strong>
-<button class="copy-phone-button" id="copy-phone-number" type="button">Copy number</button>
-<span class="copy-phone-status" id="copy-phone-status"></span>
 </div>
 </div>
 </div><script id="booking-modal-script">
