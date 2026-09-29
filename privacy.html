@@ -1808,6 +1808,49 @@ body.booking-modal-open { overflow: hidden; }
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 }
+
+    /* The full nav needs ~1180px; between there and wide screens, tighten it slightly */
+    @media (min-width: 1181px) and (max-width: 1300px) {
+      .nav-links { gap: 14px; }
+      .nav-links .button { padding: 0 20px; }
+    }
+
+    /* Below 1180px the top-level nav no longer fits, so use the menu button */
+    @media (min-width: 1041px) and (max-width: 1180px) {
+      .menu-button { display: grid; place-items: center; }
+      .nav-links {
+        position: fixed; top: calc(var(--header-height) + 8px); right: 18px; bottom: auto; left: 18px;
+        z-index: 120; display: none;
+        max-height: calc(100dvh - var(--header-height) - 28px); overflow-y: auto; overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch; flex-direction: column; align-items: stretch;
+        gap: 0; padding: 18px; background: #ffffff; border: 1px solid rgba(13, 40, 69, .12); border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links > a:not(.button):not(.instagram-nav-link) { padding: 15px 5px; border-bottom: 1px solid var(--line); }
+      .nav-links .button { margin-top: 14px; }
+      .nav-links .instagram-nav-link { margin: 14px 5px 0; }
+      .nav-dropdown { width: 100%; border-bottom: 1px solid var(--line); }
+      .nav-dropdown summary { width: 100%; justify-content: space-between; padding: 15px 5px; }
+      .nav-dropdown summary::after { display: none; }
+      .nav-dropdown-menu {
+        position: static; width: 100%; min-width: 0;
+        padding: 0 0 10px 12px; border: 0; border-radius: 0;
+        background: transparent; box-shadow: none;
+        opacity: 1; visibility: visible; pointer-events: auto;
+        transform: none; transition: none;
+      }
+      .nav-dropdown:not([open]) .nav-dropdown-menu { display: none; }
+      .nav-dropdown-menu a { padding: 11px 13px; border-left: 2px solid var(--sage-pale); border-radius: 0; white-space: normal; }
+      html:not(.js) .nav-wrap { flex-wrap: wrap; }
+      html:not(.js) .menu-button { display: none; }
+      html:not(.js) .nav-links {
+        position: static; display: flex; width: 100%; max-height: none; overflow: visible;
+        margin-top: 8px; box-shadow: none; border-radius: 18px;
+      }
+      html.js .nav-links { display: none; }
+      html.js .nav-links.open { display: flex; }
+    }
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
