@@ -167,7 +167,7 @@
     .button-outline { color: var(--navy); border-color: rgba(18, 61, 122,.26); background: rgba(255,255,255,.56); }
     .button-outline:hover { background: var(--white); box-shadow: var(--soft-shadow); }
 
-    .section { padding: 104px 24px; }
+    .section { padding: 104px 24px 72px; }
     .section-inner { max-width: var(--max); margin: auto; }
     .section-soft { background: #eef5f6; }
     .section-white { background: var(--white); }
@@ -705,7 +705,7 @@
       .brand-word strong { font-size: .59rem; letter-spacing: .14em; }
       .brand-word span { font-size: .58rem; letter-spacing: .2em; }
       .nav-links { top: calc(var(--header-height) + 8px); right: 12px; bottom: auto; left: 12px; }
-      .section { padding: 78px 20px; }
+      .section { padding: 78px 20px 56px; }
       .hero-grid { gap: 42px; padding: 56px 20px 64px; }
       h1 { font-size: clamp(2.8rem, 14vw, 4.55rem); }
       .hero h1 { font-size: clamp(3.4rem, 13vw, 6.4rem); }
@@ -847,7 +847,7 @@
       .brand-word { min-width: 0; padding-left: 8px; }
       .brand-word strong { font-size: .54rem; letter-spacing: .11em; }
       .brand-word span { font-size: .52rem; letter-spacing: .15em; }
-      .section { padding: 68px 16px; }
+      .section { padding: 68px 16px 50px; }
       .hero-grid { padding: 48px 16px 58px; }
       h1 { font-size: clamp(2.45rem, 13.5vw, 3.6rem); }
       .hero h1 { font-size: clamp(3rem, 15vw, 4.4rem); }
@@ -1955,6 +1955,16 @@ body.booking-modal-open { overflow: hidden; }
       .booking-dialog { padding: 0; }
       .booking-dialog-panel { width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; }
     }
+
+    /* what3words address */
+    .location-w3w { margin: 0 0 16px; }
+    .location-w3w a {
+      display: inline-flex; align-items: baseline; gap: 2px;
+      font-family: "Montserrat", sans-serif; font-size: .95rem; font-weight: 700;
+      color: rgba(255, 255, 255, .92); letter-spacing: -.01em;
+    }
+    .location-w3w a span:first-child { color: #e11f26; font-weight: 800; }
+    .location-w3w a:hover span:last-child { text-decoration: underline; }
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -2161,6 +2171,7 @@ Not sure which service you need? Start with an initial assessment. George can th
 <p class="eyebrow">Clinic location</p>
 <h2>At Hartley Farm, Winsley, nr Bradford-on-Avon.</h2>
 <p class="location-address">Unit 8, Hartley Farm, Winsley, BA15 2JB</p>
+<p class="location-w3w"><a href="https://what3words.com/love.stint.butchers" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">///</span><span>love.stint.butchers</span></a></p>
 <p>Free on-site parking at Hartley Farm. Contact George directly for accessibility or arrival information.</p>
 <div class="location-actions"><a class="button button-white" href="https://www.google.com/maps/search/?api=1&amp;query=Unit+8%2C+Hartley+Farm%2C+Winsley%2C+BA15+2JB" rel="noopener noreferrer" target="_blank">View on Google Maps</a></div>
 </div>
