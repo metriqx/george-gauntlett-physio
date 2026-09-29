@@ -1933,11 +1933,46 @@ body.booking-modal-open { overflow: hidden; }
       font-family: "Montserrat", sans-serif; font-size: .84rem; font-weight: 700;
       border-radius: 0 12px 12px 0;
     }
+
+
+    /* Online booking pop-out */
+    body.booking-open { overflow: hidden; }
+    .booking-dialog { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 18px; }
+    .booking-dialog[hidden] { display: none; }
+    .booking-dialog-backdrop { position: absolute; inset: 0; background: rgba(14, 49, 95, .62); backdrop-filter: blur(4px); }
+    .booking-dialog-panel {
+      position: relative; width: min(100%, 980px); max-height: calc(100dvh - 36px);
+      display: flex; flex-direction: column; overflow: hidden;
+      background: var(--white); border-radius: 26px; box-shadow: 0 40px 90px rgba(14, 49, 95, .38);
+      animation: booking-in .22s ease;
+    }
+    @keyframes booking-in { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .booking-dialog-panel { animation: none; } }
+    .booking-dialog-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 20px 22px; border-bottom: 1px solid var(--line); background: var(--white);
+    }
+    .booking-dialog-head h2 { margin: 0; font-size: 1.3rem; }
+    .booking-dialog-head p { margin: 4px 0 0; color: var(--muted); font-size: .84rem; }
+    .booking-dialog-close {
+      flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 50%; background: var(--white);
+      color: var(--navy); font-size: 1.4rem; line-height: 1; cursor: pointer; transition: .2s ease;
+    }
+    .booking-dialog-close:hover { background: var(--sage-pale); }
+    .booking-dialog-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; background: var(--white); }
+    .booking-dialog-body iframe { display: block; width: 100%; min-height: 620px; border: 0; transition: height .3s ease; }
+    .booking-dialog-foot { padding: 12px 22px 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+    .booking-dialog-foot a { color: var(--navy); font-weight: 700; text-decoration: underline; }
+    @media (max-width: 620px) {
+      .booking-dialog { padding: 0; }
+      .booking-dialog-panel { width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+    }
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div aria-label="Quick actions" class="floating-actions">
-<a aria-label="Book online" class="floating-action floating-action-book" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book online</a>
+<a aria-label="Book online" class="floating-action floating-action-book" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book online</a>
 <a aria-label="Get in contact and start the conversation" class="floating-action floating-action-contact" href="#enquiry-form">Get in Contact</a>
 </div>
 <header class="site-header">
@@ -1961,7 +1996,7 @@ body.booking-modal-open { overflow: hidden; }
 <circle cx="12" cy="12" r="4.25"></circle>
 <circle cx="17.4" cy="6.7" r="1"></circle>
 </svg></a>
-<a class="button button-primary" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book an appointment</a></nav>
+<a class="button button-primary" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book an appointment</a></nav>
 </div>
 </header>
 <main id="main">
@@ -1996,7 +2031,7 @@ body.booking-modal-open { overflow: hidden; }
 <p><strong>George Gauntlett BSc (Hons) MCSP</strong> is a Chartered Physiotherapist and founder of George Gauntlett Physio. He also works in professional sport as a Senior Physiotherapist with Bath Rugby.</p>
 <p>Previously, George worked as a Performance Physiotherapist with athletes from GB Triathlon, swimming and tennis, as well as across a wide range of other high-performance environments. His clinical experience also includes working in the NHS.</p>
 <p>Alongside his specialist work in sports performance, George provides detailed assessment, treatment and rehabilitation for acute and chronic musculoskeletal injuries—supporting people with goals ranging from comfortable everyday movement to a full return to competition.</p>
-<div class="about-actions"><a class="button button-primary" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book an appointment</a><a class="button button-outline" href="#contact">Discuss further</a></div></div>
+<div class="about-actions"><a class="button button-primary" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book an appointment</a><a class="button button-outline" href="#contact">Discuss further</a></div></div>
 <div class="about-notes" id="who-george-treats">
 <article class="about-note">
 <h3>Athlete-level experience for everyone</h3>
@@ -2134,7 +2169,7 @@ Not sure which service you need? Start with an initial assessment. George can th
 </div>
 <p class="fees-small-print reveal">Please note that we do not bill or liaise directly with insurance providers. Payment is required at the time of booking, and a receipt can be provided for you to submit to your insurer where applicable. Cancellations made with less than 48 hours’ notice, and missed appointments, will be invoiced at the full cost of the booked appointment.</p>
 <div class="fees-booking-action reveal">
-<a class="button button-primary" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" id="open-booking-modal" rel="noopener noreferrer" target="_blank">Book online</a>
+<a class="button button-primary" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" id="open-booking-modal" rel="noopener noreferrer" target="_blank">Book online</a>
 </div>
 </div>
 <div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
@@ -2855,5 +2890,95 @@ Not sure which service you need? Start with an initial assessment. George can th
 
   if (window.location.hash === '#booking-modal') openBookingModal();
 })();
-</script></body>
+</script><div aria-labelledby="booking-dialog-title" aria-modal="true" class="booking-dialog" hidden id="booking-dialog" role="dialog">
+<div class="booking-dialog-backdrop" data-booking-close></div>
+<div class="booking-dialog-panel" role="document">
+<div class="booking-dialog-head">
+<div>
+<h2 id="booking-dialog-title">Book an appointment</h2>
+<p>Choose a service and a time that works for you.</p>
+</div>
+<button aria-label="Close booking" class="booking-dialog-close" data-booking-close type="button">&times;</button>
+</div>
+<div class="booking-dialog-body">
+<iframe allow="payment" data-src="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e?embedVersion=v2" height="700" id="splose-booking-658f9056-f91b-428e-a567-534beabd958e" loading="lazy" name="onlineBookingEmbeded" scrolling="auto" title="Online booking" width="100%"></iframe>
+</div>
+<div class="booking-dialog-foot">Trouble loading the form? <a href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Open booking in a new tab</a>.</div>
+</div>
+</div>
+<script id="splose-booking-embed">
+(function () {
+  var dialog = document.getElementById('booking-dialog');
+  if (!dialog) return;
+  var panel = dialog.querySelector('.booking-dialog-panel');
+  var frame = document.getElementById('splose-booking-658f9056-f91b-428e-a567-534beabd958e');
+  var lastFocus = null;
+  var loaded = false;
+
+  function open(trigger) {
+    lastFocus = trigger || document.activeElement;
+    if (!loaded && frame.dataset.src) { frame.src = frame.dataset.src; loaded = true; }
+    dialog.hidden = false;
+    document.body.classList.add('booking-open');
+    var close = dialog.querySelector('.booking-dialog-close');
+    if (close) close.focus();
+  }
+
+  function close() {
+    dialog.hidden = true;
+    document.body.classList.remove('booking-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    if (window.location.hash === '#book' && history.replaceState) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  document.querySelectorAll('[data-booking-open]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); open(el); });
+  });
+  dialog.querySelectorAll('[data-booking-close]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); close(); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (dialog.hidden) return;
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'Tab') {
+      var f = panel.querySelectorAll('a[href], button:not([disabled]), iframe');
+      f = Array.prototype.filter.call(f, function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  if (window.location.hash === '#book') open();
+
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://george-gauntlett-physio.splose.com') return;
+    if (!e.data || !e.data.type) return;
+    if (!frame || e.source !== frame.contentWindow) return;
+    if (e.data.type === 'sploseIframeResize') {
+      var h = e.data.height;
+      if (typeof h === 'number' && isFinite(h) && h >= 0) { frame.style.height = h + 'px'; }
+    }
+    if (e.data.type === 'sploseIframeScrollToTop') {
+      var body = dialog.querySelector('.booking-dialog-body');
+      if (body) body.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (e.data.type === 'sploseBookingConfirmed') {
+      var p = e.data.payload || {};
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'splose_booking_confirmed',
+        booking_page_uuid: String(p.booking_page_uuid),
+        booking_page_name: String(p.booking_page_name),
+        service_name: String(p.service_name),
+        location_name: String(p.location_name),
+        service_price: Number(p.service_price)
+      });
+    }
+  });
+})();
+</script>
+</body>
 </html>

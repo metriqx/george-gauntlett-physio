@@ -45,8 +45,13 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
   step, so a colour change means editing every page.
 - "How George can help" is the `.gg-services` block; its cards are `<details>`
   elements, so they open without JavaScript.
-- Booking buttons link straight to the Splose online-booking page in a new tab.
-  The old "how would you like to book?" modal has been removed.
+- Booking buttons open the Splose booking form in a pop-out (`#booking-dialog`).
+  The iframe is lazy: its `src` is only set from `data-src` on first open, so
+  Splose is not loaded on every page view. Each button keeps the real Splose
+  URL in its `href` with `target="_blank"`, so it still works without
+  JavaScript. The `splose-booking-embed` script handles the iframe auto-resize
+  and pushes a `splose_booking_confirmed` event to `window.dataLayer` (only
+  useful if GTM or GA4 is installed).
 - The clinic address (Unit 8, Hartley Farm, Winsley, BA15 2JB) appears in the
   location section, the MedicalBusiness JSON-LD and the Google Maps embed.
 - Cancellation policy (48 hours) appears twice in `index.html`: the fees small
