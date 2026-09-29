@@ -1,6 +1,6 @@
 # George Gauntlett Physio
 
-Static marketing site for George Gauntlett Physio, Bradford-on-Avon.
+Static marketing site for George Gauntlett Physio, Hartley Farm, Winsley.
 
 ## Structure
 
@@ -9,8 +9,7 @@ images are embedded as base64 data URIs, so the page is fully self-contained.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The whole site: hero, about, services, the 3 R's, conditions treated (interactive body map), fees, contact, location, FAQs |
-| `conditions-treated.html` | Redirect stub only — the old standalone page was folded into `index.html#conditions` |
+| `index.html` | The whole site: hero, about, services, fees, contact, location (map), FAQs |
 | `rugby-robust.html` | Rugby Robust: physio-led youth rugby robustness workshops and sessions (U13 to U16) |
 
 `.nojekyll` stops GitHub Pages from running Jekyll over the files.
@@ -44,9 +43,6 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
   `<style>` block: navy `#123d7a`, teal `#138a85` (the `--green` / `--sage-*`
   tokens still carry their old names), pale teal `#e6f2f2`. There is no build
   step, so a colour change means editing every page.
-- The 3 R's section uses `.section-approach-light`; its light styling overrides
-  live in the `<style>` block near the "Light treatment for the 3 R's section"
-  comment in `index.html`.
 - "How George can help" is the `.gg-services` block; its cards are `<details>`
   elements, so they open without JavaScript.
 - Booking buttons link straight to the Splose online-booking page in a new tab.
@@ -55,6 +51,5 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
   location section, the MedicalBusiness JSON-LD and the Google Maps embed.
 - Cancellation policy (48 hours) appears twice in `index.html`: the fees small
   print and the FAQ entry.
-- The body map is driven by `.injury-marker` elements whose `data-title`,
-  `data-description` and pipe-separated `data-items` fill the popup. Marker
-  coordinates are percentage `top`/`left` rules named `.marker-*`.
+- The full top-level nav needs about 1040px; below that the header switches to
+  the menu button.
