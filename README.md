@@ -11,6 +11,7 @@ images are embedded as base64 data URIs, so the page is fully self-contained.
 | --- | --- |
 | `index.html` | The whole site: hero, about, services, the 3 R's, conditions treated (interactive body map), fees, contact, location, FAQs |
 | `conditions-treated.html` | Redirect stub only — the old standalone page was folded into `index.html#conditions` |
+| `rugby-robust.html` | Rugby Robust: physio-led youth rugby robustness workshops and sessions (U13 to U16) |
 
 `.nojekyll` stops GitHub Pages from running Jekyll over the files.
 

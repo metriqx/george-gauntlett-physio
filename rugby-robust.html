@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rugby Robust — physio-led youth rugby robustness workshops and practical sessions for U13–U16 players." />
+  <title>Rugby Robust | Prepare Today. Play Tomorrow.</title>
+  <style>
+    :root{
+      --navy:#0d1724;
+      --ink:#172331;
+      --blue:#a7d8f2;
+      --blue-strong:#78c5eb;
+      --blue-pale:#eef8fd;
+      --white:#ffffff;
+      --muted:#657281;
+      --line:#dbe6ed;
+      --shadow:0 18px 45px rgba(13,23,36,.10);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.78rem;
+      font-weight:800;
+      color:var(--navy);
+    }
+    .eyebrow:before{content:"";width:30px;height:3px;background:var(--blue-strong);border-radius:3px}
+    h1,h2,h3{line-height:1.08;margin:0;color:var(--navy)}
+    h1{font-size:clamp(3.2rem,8vw,7rem);letter-spacing:-.055em}
+    h2{font-size:clamp(2.1rem,4.5vw,4rem);letter-spacing:-.035em}
+    h3{font-size:1.2rem}
+    p{margin:0;color:var(--muted)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{background:var(--navy);color:var(--white)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(13,23,36,.18)}
+    .btn-secondary{background:var(--white);color:var(--navy);border-color:var(--navy)}
+    .btn-secondary:hover{background:var(--blue-pale)}
+    .btn-light{background:var(--white);color:var(--navy)}
+    .btn-outline-light{border-color:rgba(255,255,255,.7);color:var(--white)}
+    .btn-outline-light:hover{background:rgba(255,255,255,.08)}
+    nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter:blur(16px);
+      background:rgba(255,255,255,.88);
+      border-bottom:1px solid rgba(219,230,237,.85);
+    }
+    .nav-inner{
+      min-height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:900;color:var(--navy)
+    }
+    .rr-mark{
+      display:grid;place-items:center;
+      width:42px;height:42px;border-radius:13px;background:var(--navy);color:var(--white);
+      font-size:.95rem;letter-spacing:-.08em
+    }
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.9rem;font-weight:700}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 15%, rgba(167,216,242,.95), transparent 25%),
+        linear-gradient(135deg,#f9fdff 0%,#eef8fd 55%,#fff 100%);
+      padding:90px 0 78px;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;right:-110px;bottom:-250px;width:520px;height:520px;
+      border:78px solid rgba(120,197,235,.13);border-radius:50%;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative;z-index:1
+    }
+    .hero-copy p{
+      max-width:690px;font-size:clamp(1.05rem,1.5vw,1.24rem);margin-top:25px;color:#4d5e6e
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .hero-card{
+      background:var(--navy);color:var(--white);padding:34px;border-radius:var(--radius);box-shadow:var(--shadow)
+    }
+    .hero-card p{color:#d6e2eb;font-size:.95rem}
+    .hero-card .quote{
+      font-size:clamp(1.45rem,2.5vw,2.15rem);font-weight:850;color:var(--white);line-height:1.15;margin:18px 0 22px
+    }
+    .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .meta{
+      background:rgba(255,255,255,.08);padding:15px 16px;border-radius:16px
+    }
+    .meta strong{display:block;font-size:1.05rem}
+    .meta span{font-size:.78rem;color:#c8d6df}
+    section{padding:88px 0}
+    .section-head{max-width:760px;margin-bottom:44px}
+    .section-head h2{margin-top:12px}
+    .section-head p{margin-top:18px;font-size:1.05rem}
+    .intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+    .statement{
+      background:var(--blue-pale);
+      border:1px solid #d6edf9;
+      border-radius:var(--radius);
+      padding:34px;
+    }
+    .statement strong{
+      display:block;color:var(--navy);font-size:clamp(1.55rem,3vw,2.55rem);line-height:1.12
+    }
+    .statement p{margin-top:18px}
+    .points{display:grid;gap:18px}
+    .point{display:grid;grid-template-columns:46px 1fr;gap:16px;align-items:start}
+    .point-icon{
+      width:46px;height:46px;border-radius:14px;background:var(--navy);color:var(--white);
+      display:grid;place-items:center;font-weight:900
+    }
+    .point p{margin-top:6px}
+    .workshop{background:var(--navy);color:var(--white)}
+    .workshop h2,.workshop h3{color:var(--white)}
+    .workshop p{color:#c8d6df}
+    .workshop .eyebrow{color:var(--white)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{
+      background:var(--white);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 10px 30px rgba(13,23,36,.05)
+    }
+    .workshop .card{background:#172637;border-color:#273b4e;box-shadow:none}
+    .card-num{font-size:.78rem;font-weight:900;letter-spacing:.1em;color:var(--blue-strong)}
+    .card h3{margin-top:26px}
+    .card p{margin-top:12px;font-size:.94rem}
+    .agebar{
+      margin-top:28px;display:flex;gap:10px;align-items:center;flex-wrap:wrap
+    }
+    .pill{
+      border:1px solid #d2dfe8;border-radius:999px;padding:8px 13px;font-size:.82rem;font-weight:800;color:var(--navy);background:var(--white)
+    }
+    .workshop .pill{border-color:#395064;background:#1a2b3d;color:var(--white)}
+    .framework{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    }
+    .framework-card{
+      border-radius:22px;padding:30px;border:1px solid var(--line);position:relative;overflow:hidden
+    }
+    .framework-card:before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--blue-strong)
+    }
+    .framework-card span{font-size:.78rem;font-weight:900;letter-spacing:.12em;color:#568fb0}
+    .framework-card h3{font-size:1.5rem;margin-top:10px}
+    .framework-card p{margin-top:10px}
+    .pathway{background:#f7fbfd}
+    .path-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:46px;align-items:start}
+    .path-flow{display:grid;gap:14px}
+    .path-item{
+      background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px;
+      display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px
+    }
+    .path-item .badge{
+      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--blue-pale);font-weight:900;color:var(--navy)
+    }
+    .path-item small{display:block;color:#768594;margin-top:3px}
+    .arrow{font-size:1.3rem;color:#89a9ba}
+    .about-grid{display:grid;grid-template-columns:1fr;gap:42px;align-items:center}
+    .about-box{
+      border-radius:var(--radius);background:var(--blue-pale);padding:36px
+    }
+    .about-box ul{margin:22px 0 0;padding-left:20px;color:#4f6270}
+    .about-box li{margin:8px 0}
+    .cta{
+      padding:0 0 90px
+    }
+    .cta-panel{
+      background:linear-gradient(135deg,var(--navy),#1c3043);
+      color:var(--white);border-radius:30px;padding:52px;
+      display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:center
+    }
+    .cta-panel h2{color:var(--white)}
+    .cta-panel p{color:#cdd9e2;margin-top:16px;max-width:650px}
+    .cta-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+    footer{border-top:1px solid var(--line);padding:28px 0 38px}
+    .footer-inner{display:flex;justify-content:space-between;gap:24px;align-items:center;color:#7b8a97;font-size:.86rem}
+    .fine{font-size:.78rem;color:#7e8b96;margin-top:12px}
+    @media(max-width:950px){
+      .hero-grid,.intro-grid,.path-grid,.about-grid,.cta-panel{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .framework{grid-template-columns:1fr}
+      .cta-actions{justify-content:flex-start}
+      .nav-links a:not(.btn):not(.back-link){display:none}
+    }
+    @media(max-width:620px){
+      .container{width:min(calc(100% - 28px),var(--max))}
+      .hero{padding:65px 0 55px}
+      section{padding:68px 0}
+      .cards{grid-template-columns:1fr}
+      .hero-card,.statement,.about-box{padding:26px}
+      .cta-panel{padding:34px 24px}
+      .hero-meta{grid-template-columns:1fr}
+      h1{font-size:3.35rem}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+
+    /* Co-brand lockup */
+    .lockup{display:flex;align-items:center;gap:14px;min-width:0}
+    .lockup img{height:46px;width:auto;object-fit:contain;display:block}
+    .lockup .gcr{height:56px}
+    .lockup-x{flex:0 0 auto;color:var(--navy);display:grid;place-items:center}
+    .lockup-x svg{width:16px;height:16px;display:block}
+    .lockup-divider{width:1px;height:34px;background:var(--line);flex:0 0 auto}
+    .lockup .brand-word strong{font-weight:900;color:var(--navy);font-size:.92rem;letter-spacing:.02em;white-space:nowrap}
+    /* Small back link */
+    .back-link{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:7px 12px;border:1px solid var(--line);border-radius:999px;
+      background:var(--white);color:var(--navy);
+      font-size:.74rem;font-weight:800;letter-spacing:.02em;
+      transition:.2s ease;
+    }
+    .back-link:hover{background:var(--blue-pale);border-color:var(--blue-strong)}
+    .back-link svg{width:13px;height:13px;flex:0 0 auto}
+    footer .back-link{background:transparent}
+    footer .back-link:hover{background:var(--blue-pale)}
+    .footer-brand-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    /* Next-step links */
+    .path-item{transition:.2s ease}
+    a.path-item:hover{
+      border-color:var(--blue-strong);transform:translateY(-2px);
+      box-shadow:0 14px 32px rgba(13,23,36,.10)
+    }
+    a.path-item:hover .arrow{color:var(--navy)}
+    a.path-item strong{color:var(--navy)}
+    /* Enquiry modal */
+    .modal{
+      position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:20px;
+    }
+    .modal[hidden]{display:none}
+    .modal-backdrop{position:absolute;inset:0;background:rgba(13,23,36,.62);backdrop-filter:blur(4px)}
+    .modal-panel{
+      position:relative;width:min(100%,560px);max-height:calc(100dvh - 40px);overflow:auto;
+      background:var(--white);border-radius:var(--radius);padding:38px;box-shadow:0 40px 90px rgba(13,23,36,.35);
+      animation:modal-in .22s ease;
+    }
+    @keyframes modal-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){.modal-panel{animation:none}}
+    .modal-close{
+      position:absolute;top:16px;right:16px;width:38px;height:38px;display:grid;place-items:center;
+      border:1px solid var(--line);border-radius:50%;background:var(--white);color:var(--navy);
+      font-size:1.3rem;line-height:1;cursor:pointer;transition:.2s ease;
+    }
+    .modal-close:hover{background:var(--blue-pale)}
+    .modal-panel h2{font-size:1.9rem;letter-spacing:-.03em}
+    .modal-intro{margin-top:12px;font-size:.95rem}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+    .form-field{display:grid;gap:6px}
+    .form-field.full{grid-column:1/-1}
+    .form-field label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+    .form-field input,.form-field textarea{
+      width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;
+      background:var(--blue-pale);color:var(--ink);font-family:inherit;font-size:.95rem;
+    }
+    .form-field textarea{min-height:104px;resize:vertical}
+    .form-field input:focus,.form-field textarea:focus{
+      outline:none;border-color:var(--blue-strong);background:var(--white);
+      box-shadow:0 0 0 3px rgba(120,197,235,.35)
+    }
+    .consent{
+      display:flex;gap:10px;align-items:flex-start;margin-top:18px;
+      font-size:.82rem;color:var(--muted);line-height:1.5
+    }
+    .consent input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--navy)}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .modal-actions .btn{min-height:48px}
+    .form-status{margin-top:14px;font-size:.88rem;font-weight:700}
+    .form-status.is-error{color:#a5342f}
+    .form-note{margin-top:18px;font-size:.74rem;line-height:1.55;color:#8c97a2}
+    .form-note a{text-decoration:underline}
+    /* Thank you */
+    .modal-thanks{text-align:center;padding:14px 0 4px}
+    .modal-thanks .tick{
+      width:66px;height:66px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;
+      background:var(--navy);color:var(--white);font-size:1.9rem
+    }
+    .modal-thanks h2{font-size:1.85rem}
+    .modal-thanks p{margin-top:14px}
+    .modal-thanks .btn{margin-top:26px}
+    body.modal-open{overflow:hidden}
+    @media(max-width:620px){
+      .modal-panel{padding:28px 22px}
+      .form-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .lockup-divider,.lockup .brand-word{display:none}
+    }
+    @media(max-width:620px){
+      .nav-inner{gap:10px}
+      .lockup{gap:8px}
+      .lockup img{height:30px}
+      .lockup .gcr{height:36px}
+      .lockup-x svg{width:12px;height:12px}
+      .nav-links{gap:8px}
+      .nav-links .btn{min-height:42px;padding:0 15px;font-size:.85rem}
+      .back-link{padding:6px 10px;font-size:.7rem}
+    }
+    @media(max-width:400px){
+      .back-link{padding:6px 9px;gap:4px}
+      .lockup img{height:27px}
+      .lockup .gcr{height:32px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="lockup" href="#top" aria-label="George Gauntlett Physio and Game Changer Rugby present Rugby Robust">
+      <img src="images/logo.webp" alt="George Gauntlett Physio" width="288" height="170" decoding="async" />
+      <span class="lockup-x" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </span>
+      <img class="gcr" src="images/game-changer-rugby.webp" alt="Game Changer Rugby" width="884" height="922" decoding="async" />
+      <span class="lockup-divider" aria-hidden="true"></span>
+      <span class="brand-word"><strong>RUGBY ROBUST</strong></span>
+    </a>
+    <div class="nav-links">
+      <a href="#workshop">Workshop</a>
+      <a href="#framework">Framework</a>
+      <a href="#pathway">What’s next?</a>
+      <a class="btn btn-primary" href="#enquire" data-enquire>Enquire</a>
+      <a class="back-link" href="index.html" aria-label="Back to George Gauntlett Physio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        Back
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Youth rugby robustness</span>
+        <h1>PREPARE TODAY.<br>PLAY TOMORROW.</h1>
+        <p>
+          A clear, practical framework to help young rugby players build the physical qualities
+          they need to prepare for training, tolerate the demands of the game and stay available to perform.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#enquire" data-enquire>Enquire</a>
+          <a class="btn btn-secondary" href="https://www.gamechangerrugby.com" target="_blank" rel="noopener noreferrer">Book / Register</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <p>THE RUGBY ROBUST PRINCIPLE</p>
+        <div class="quote">Availability to train equals availability to perform.</div>
+        <p>
+          Robustness is the capacity to consistently engage in training and games with maximal effort —
+          built through education, movement preparation, neuromuscular training and progressive physical capacity.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="container intro-grid">
+      <div class="statement">
+        <span class="eyebrow">What is Rugby Robust?</span>
+        <strong>Not just injury prevention. Preparation for the demands of rugby.</strong>
+        <p>
+          Rugby Robust combines our understanding of youth rugby injuries, neuromuscular training principles
+          and the demands of the sport into one practical system players can understand and use.
+        </p>
+        <p style="margin-top:18px;">
+          <strong style="color:var(--navy);">Who leads it?</strong> Delivered by George Gauntlett Physio, with 8 years in senior and academy men’s rugby.
+        </p>
+      </div>
+      <div class="points">
+        <div class="point">
+          <div class="point-icon">01</div>
+          <div><h3>Know the game</h3><p>Understand the physical demands, common injury patterns and why preparation matters.</p></div>
+        </div>
+        <div class="point">
+          <div class="point-icon">02</div>
+          <div><h3>Build better preparation habits</h3><p>Learn a repeatable movement-prep structure that can sit around rugby training and matches.</p></div>
+        </div>
+        <div class="point">
+          <div class="point-icon">03</div>
+          <div><h3>Develop robustness</h3><p>Target control, strength, balance, capacity and reactive qualities at the shoulder, knee and ankle.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshop" id="workshop">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Rugby Robust Workshop</span>
+        <h2>Educate. Test. Prep. Perform.</h2>
+        <p>
+          A practical, player-friendly workshop for young rugby players and their parents, bringing together
+          education, movement preparation, robustness training and simple testing in one session.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-num">01 / EDUCATE</div>
+          <h3>Know the game</h3>
+          <p>Common rugby injuries, how they happen, what increases risk and how preparation can help.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">02 / TEST</div>
+          <h3>Simple screening</h3>
+          <p>Useful mobility, balance and capacity measures to help players understand where they are now.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">03 / PREP</div>
+          <h3>Movement preparation</h3>
+          <p>A clear warm-up framework informed by neuromuscular training and the principles used in rugby preparation.</p>
+        </article>
+        <article class="card">
+          <div class="card-num">04 / PERFORM</div>
+          <h3>Robustness circuit</h3>
+          <p>Partner-based shoulder, knee and ankle work using move, control, build and react progressions.</p>
+        </article>
+      </div>
+
+      <div class="agebar">
+        <span class="pill">Youth players: U13–U16</span>
+        <span class="pill">Parents welcome</span>
+        <span class="pill">Physio-led</span>
+        <span class="pill">Rugby-specific</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="framework">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">The practical framework</span>
+        <h2>Move. Control. Build. React.</h2>
+        <p>
+          Each area is progressed from movement options, into control and physical capacity,
+          then into more reactive rugby-relevant challenges.
+        </p>
+      </div>
+      <div class="framework">
+        <article class="framework-card">
+          <span>01</span>
+          <h3>MOVE</h3>
+          <p>Develop the mobility and movement options needed to access useful rugby positions before adding more control, load or speed.</p>
+        </article>
+        <article class="framework-card">
+          <span>02</span>
+          <h3>CONTROL</h3>
+          <p>Position, balance, coordination and neuromuscular control before adding more load or speed.</p>
+        </article>
+        <article class="framework-card">
+          <span>03</span>
+          <h3>BUILD</h3>
+          <p>Develop strength and capacity so key tissues and movement patterns can tolerate repeated rugby demands.</p>
+        </article>
+        <article class="framework-card">
+          <span>04</span>
+          <h3>REACT</h3>
+          <p>Add decision-making, perturbation, partner interaction and speed to bridge preparation towards the game.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pathway" id="pathway">
+    <div class="container path-grid">
+      <div class="section-head">
+        <span class="eyebrow">Beyond the workshop</span>
+        <h2>Choose the next step that fits the player.</h2>
+        <p>
+          Rugby Robust is designed as an entry point, not a one-size-fits-all programme. Players can continue
+          with group sessions or individual testing and bespoke programming depending on their needs.
+        </p>
+      </div>
+      <div class="path-flow">
+        <a class="path-item" href="https://www.gamechangerrugby.com" target="_blank" rel="noopener noreferrer">
+          <div class="badge">4×</div>
+          <div><strong>Rugby Robust Sessions</strong><small>Four 1-hour physio-led robustness sessions.</small></div>
+          <div class="arrow">→</div>
+        </a>
+        <a class="path-item" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" target="_blank" rel="noopener noreferrer">
+          <div class="badge">1:1</div>
+          <div><strong>Robustness Testing + Bespoke Plan</strong><small>Individual testing with a tailored remote plan.</small></div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+<section class="cta" id="enquire">
+    <div class="container">
+      <div class="cta-panel">
+        <div>
+          <span class="eyebrow" style="color:white">Rugby Robust</span>
+          <h2 style="margin-top:12px;">Build better preparation for the game.</h2>
+          <p>
+            Enquire about upcoming Rugby Robust workshops, group sessions or 1:1 robustness testing
+            for young players, schools or rugby programmes.
+          </p>
+          <div class="fine">George Gauntlett Physio · Wiltshire</div>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="#enquire" data-enquire>Enquire</a>
+          <a class="btn btn-outline-light" href="https://www.gamechangerrugby.com" target="_blank" rel="noopener noreferrer">Book / Register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand-row">
+      <div class="brand"><div class="rr-mark">RR</div><div>RUGBY ROBUST</div></div>
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+        Back to GG Physio
+      </a>
+    </div>
+    <div>Prepare today. Play tomorrow.</div>
+  </div>
+</footer>
+
+
+<div class="modal" id="enquiry-modal" role="dialog" aria-modal="true" aria-labelledby="enquiry-modal-title" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel" role="document">
+    <button class="modal-close" type="button" data-close-modal aria-label="Close enquiry form">&times;</button>
+
+    <div id="enquiry-view">
+      <span class="eyebrow">Rugby Robust</span>
+      <h2 id="enquiry-modal-title" style="margin-top:14px;">Start the conversation</h2>
+      <p class="modal-intro">Send George a short outline of what you are after and he will reply by email.</p>
+
+      <form id="rr-enquiry-form" novalidate>
+        <input type="hidden" name="access_key" value="7a37695e-43dd-460a-947e-9c5fbb259e54" />
+        <input type="hidden" name="subject" value="Rugby Robust enquiry" />
+        <input type="hidden" name="from_name" value="Rugby Robust page" />
+        <label class="hp" for="rr-botcheck">Leave this field empty<input id="rr-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" /></label>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="rr-name">Name</label>
+            <input id="rr-name" name="name" required autocomplete="name" autocapitalize="words" enterkeyhint="next" />
+          </div>
+          <div class="form-field">
+            <label for="rr-phone">Phone</label>
+            <input id="rr-phone" name="phone" inputmode="tel" autocomplete="tel" enterkeyhint="next" />
+          </div>
+          <div class="form-field full">
+            <label for="rr-email">Email</label>
+            <input id="rr-email" name="email" type="email" required autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="next" />
+          </div>
+          <div class="form-field full">
+            <label for="rr-message">How can George help?</label>
+            <textarea id="rr-message" name="message" required enterkeyhint="send" autocapitalize="sentences" placeholder="Player age group, club or school, and what you are interested in (workshop, group sessions or 1:1 testing)."></textarea>
+          </div>
+        </div>
+
+        <label class="consent" for="rr-consent">
+          <input id="rr-consent" name="marketing-consent" type="checkbox" />
+          <span>Yes, I would be happy to receive occasional emails about George Gauntlett Physiotherapy services, clinic updates and relevant offers. This is optional, will not affect your enquiry or care, and you can unsubscribe at any time.</span>
+        </label>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="rr-enquiry-submit" type="submit">Send enquiry</button>
+          <button class="btn btn-secondary" type="button" data-close-modal>Cancel</button>
+        </div>
+        <p class="form-status" id="rr-enquiry-status" role="status" aria-live="polite" hidden></p>
+        <p class="form-note">Your contact details will be used to respond to your enquiry and manage any appointments. Promotional emails will only be sent when you select the optional consent box above. Please do not include sensitive medical information in this form. Email is not monitored as an emergency service. Enquiries are delivered by Web3Forms, which processes the message in transit on George&rsquo;s behalf. See the <a href="privacy.html">privacy notice</a> for how your information is handled.</p>
+      </form>
+    </div>
+
+    <div id="thanks-view" class="modal-thanks" hidden>
+      <div class="tick" aria-hidden="true">&#10003;</div>
+      <h2>Thank you, your enquiry has been sent.</h2>
+      <p>George will be in touch by email shortly. If it is urgent, you can reach him on <a href="mailto:george@georgegauntlettphysio.co.uk" style="text-decoration:underline">george@georgegauntlettphysio.co.uk</a>.</p>
+      <a class="btn btn-primary" href="#" data-close-modal>Close</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var modal = document.getElementById('enquiry-modal');
+  if (!modal) return;
+  var panel = modal.querySelector('.modal-panel');
+  var enquiryView = document.getElementById('enquiry-view');
+  var thanksView = document.getElementById('thanks-view');
+  var form = document.getElementById('rr-enquiry-form');
+  var submit = document.getElementById('rr-enquiry-submit');
+  var status = document.getElementById('rr-enquiry-status');
+  var lastFocus = null;
+
+  function setStatus(msg, state) {
+    if (!status) return;
+    status.innerHTML = msg;
+    status.classList.remove('is-error');
+    if (state) status.classList.add(state);
+    status.hidden = false;
+  }
+
+  function open(trigger) {
+    lastFocus = trigger || document.activeElement;
+    enquiryView.hidden = false;
+    thanksView.hidden = true;
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    var first = document.getElementById('rr-name');
+    if (first) first.focus();
+  }
+
+  function close() {
+    modal.hidden = true;
+    document.body.classList.remove('modal-open');
+    if (status) { status.hidden = true; status.textContent = ''; }
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    if (window.location.hash === '#enquire' && history.replaceState) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  document.querySelectorAll('[data-enquire]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); open(el); });
+  });
+  modal.querySelectorAll('[data-close-modal]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); close(); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+    if (e.key === 'Tab' && !modal.hidden) {
+      var f = panel.querySelectorAll('a[href], button:not([disabled]), input:not([type="hidden"]), textarea, select');
+      f = Array.prototype.filter.call(f, function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  if (window.location.hash === '#enquire') open();
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (submit.disabled) return;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var name = document.getElementById('rr-name').value.trim();
+    var payload = Object.fromEntries(new FormData(form));
+    payload.subject = 'Rugby Robust enquiry' + (name ? ' from ' + name : '');
+    payload.phone = (document.getElementById('rr-phone').value.trim()) || 'Not provided';
+    payload['marketing-consent'] = document.getElementById('rr-consent').checked
+      ? 'Yes, I consent to occasional promotional emails.'
+      : 'No, I have not opted in to promotional emails.';
+
+    submit.disabled = true;
+    submit.textContent = 'Sending\u2026';
+    setStatus('Sending your enquiry\u2026', null);
+
+    try {
+      var response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var result = await response.json().catch(function () { return {}; });
+      if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
+      form.reset();
+      status.hidden = true;
+      enquiryView.hidden = true;
+      thanksView.hidden = false;
+      var closeBtn = thanksView.querySelector('.btn');
+      if (closeBtn) closeBtn.focus();
+    } catch (err) {
+      setStatus('Sorry, the enquiry could not be sent. Please email <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlettphysio.co.uk</a> or call <a href="tel:+441225868282">01225 868 282</a>.', 'is-error');
+    } finally {
+      submit.disabled = false;
+      submit.textContent = 'Send enquiry';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
