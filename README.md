@@ -40,9 +40,19 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
 
 ## Editing notes
 
+- Brand colours are the `:root` custom properties at the top of each page's
+  `<style>` block: navy `#123d7a`, teal `#138a85` (the `--green` / `--sage-*`
+  tokens still carry their old names), pale teal `#e6f2f2`. There is no build
+  step, so a colour change means editing every page.
 - The 3 R's section uses `.section-approach-light`; its light styling overrides
   live in the `<style>` block near the "Light treatment for the 3 R's section"
   comment in `index.html`.
+- "How George can help" is the `.gg-services` block; its cards are `<details>`
+  elements, so they open without JavaScript.
+- Booking buttons link straight to the Splose online-booking page in a new tab.
+  The old "how would you like to book?" modal has been removed.
+- The clinic address (Unit 8, Hartley Farm, Winsley, BA15 2JB) appears in the
+  location section, the MedicalBusiness JSON-LD and the Google Maps embed.
 - Cancellation policy (48 hours) appears twice in `index.html`: the fees small
   print and the FAQ entry.
 - The body map is driven by `.injury-marker` elements whose `data-title`,

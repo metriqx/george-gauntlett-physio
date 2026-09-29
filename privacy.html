@@ -8,7 +8,7 @@
 <meta content="yes" name="mobile-web-app-capable"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="default" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="#1a3a56" name="theme-color"/>
+<meta content="#123d7a" name="theme-color"/>
 <meta content="How George Gauntlett Physio collects and uses your information, why, how long it is kept, and your rights under UK data protection law." name="description"/>
 <meta content="Privacy Notice | George Gauntlett Physio" property="og:title"/>
 <meta content="How your information is collected, used and protected." property="og:description"/>
@@ -23,22 +23,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
     :root {
-      --navy: #0d2f5b;
+      --navy: #123d7a;
       --navy-2: #17457f;
-      --navy-deep: #08203f;
-      --green: #35563f;
-      --green-2: #2a4633;
-      --sage: #90a397;
-      --sage-dark: #6a8275;
-      --sage-pale: #e7efea;
-      --grey: #c8ccc6;
-      --warm: #faf6f1;
+      --navy-deep: #0e315f;
+      --green: #138a85;
+      --green-2: #0d746f;
+      --sage: #4fa8a3;
+      --sage-dark: #138a85;
+      --sage-pale: #e6f2f2;
+      --grey: #c9d6da;
+      --warm: #f4f9f9;
       --white: #ffffff;
-      --ink: #1d3a4b;
-      --muted: #6f7c84;
-      --line: rgba(13, 40, 69, .14);
-      --shadow: 0 24px 70px rgba(13, 40, 69, .14);
-      --soft-shadow: 0 14px 40px rgba(13, 40, 69, .09);
+      --ink: #17324a;
+      --muted: #60758a;
+      --line: rgba(18, 61, 122, .14);
+      --shadow: 0 24px 70px rgba(18, 61, 122, .14);
+      --soft-shadow: 0 14px 40px rgba(18, 61, 122, .09);
       --radius: 28px;
       --max: 1220px;
       --header-height: 134px;
@@ -81,7 +81,7 @@
       gap: 13px; padding: 8px 18px; overflow: hidden;
       background: var(--navy-deep);
       color: var(--white); text-align: center; font-family: "Montserrat", sans-serif;
-      box-shadow: inset 0 -1px 0 rgba(255,255,255,.13), 0 4px 14px rgba(13,40,69,.12);
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,.13), 0 4px 14px rgba(18, 61, 122,.12);
     }
     .announcement::after {
       content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -91,12 +91,12 @@
     .announcement-label {
       position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 7px;
       flex: 0 0 auto; padding: 5px 9px; border-radius: 999px;
-      background: #d3a454; color: #102a43; font-size: .61rem; font-weight: 900;
+      background: #d3a454; color: #0e315f; font-size: .61rem; font-weight: 900;
       letter-spacing: .12em; text-transform: uppercase;
       box-shadow: 0 5px 14px rgba(0,0,0,.15);
     }
     .announcement-dot {
-      width: 7px; height: 7px; border-radius: 50%; background: #102a43;
+      width: 7px; height: 7px; border-radius: 50%; background: #0e315f;
       box-shadow: 0 0 0 4px rgba(16,42,67,.13); animation: announcement-pulse 2s ease-in-out infinite;
     }
     .announcement-message {
@@ -120,8 +120,8 @@
     .site-header {
       position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 100;
       background: rgba(255, 255, 255, .94);
-      border-bottom: 1px solid rgba(13, 40, 69, .10);
-      box-shadow: 0 1px 0 rgba(13, 40, 69, .03);
+      border-bottom: 1px solid rgba(18, 61, 122, .10);
+      box-shadow: 0 1px 0 rgba(18, 61, 122, .03);
       backdrop-filter: blur(16px);
     }
     .nav-wrap {
@@ -160,16 +160,16 @@
       cursor: pointer;
     }
     .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--navy); color: var(--white); box-shadow: 0 12px 28px rgba(13,40,69,.21); }
+    .button-primary { background: var(--navy); color: var(--white); box-shadow: 0 12px 28px rgba(18, 61, 122,.21); }
     .button-primary:hover { background: var(--navy-2); }
-    .button-sage { background: var(--sage-dark); color: var(--white); box-shadow: 0 12px 28px rgba(83,110,97,.23); }
+    .button-sage { background: var(--sage-dark); color: var(--white); box-shadow: 0 12px 28px rgba(19, 138, 133,.23); }
     .button-white { background: var(--white); color: var(--navy); }
-    .button-outline { color: var(--navy); border-color: rgba(13,40,69,.26); background: rgba(255,255,255,.56); }
+    .button-outline { color: var(--navy); border-color: rgba(18, 61, 122,.26); background: rgba(255,255,255,.56); }
     .button-outline:hover { background: var(--white); box-shadow: var(--soft-shadow); }
 
     .section { padding: 104px 24px; }
     .section-inner { max-width: var(--max); margin: auto; }
-    .section-soft { background: #eef2ef; }
+    .section-soft { background: #eef5f6; }
     .section-white { background: var(--white); }
     .section-navy { background: var(--navy); color: var(--white); }
     .section-sage { background: var(--sage-pale); }
@@ -177,7 +177,7 @@
       margin: 0 0 16px; color: var(--sage-dark); font-family: "Montserrat", sans-serif;
       font-size: .72rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
     }
-    .section-navy .eyebrow { color: #c9d6ce; }
+    .section-navy .eyebrow { color: #cfe4e4; }
     h1, h2, h3, h4 {
       margin-top: 0; color: var(--navy); font-family: "Montserrat", sans-serif; line-height: 1.08;
     }
@@ -205,9 +205,9 @@
       display: grid; grid-template-columns: 1.05fr .95fr; align-items: center;
       gap: 68px; padding: 84px 24px 72px;
     }
-    .hero .eyebrow { color: #c8d5cd; }
+    .hero .eyebrow { color: #cfe4e4; }
     .hero h1 { color: var(--white); max-width: 780px; }
-    .hero h1 .hero-keyword { color: #a9bdb0; }
+    .hero h1 .hero-keyword { color: #7fc6c1; }
     .hero-copy { max-width: 690px; color: rgba(255,255,255,.75); font-size: clamp(1.06rem, 1.6vw, 1.27rem); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
     .hero .button-outline { color: var(--white); border-color: rgba(255,255,255,.32); background: transparent; }
@@ -218,7 +218,7 @@
       font-family: "Montserrat", sans-serif; font-size: .72rem; font-weight: 700;
       letter-spacing: .05em; text-transform: uppercase;
     }
-    .hero-trust span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #9eb4a7; }
+    .hero-trust span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #86c4bf; }
 
     /* Physio journey integrated into the hero */
     .hero-journey {
@@ -229,7 +229,7 @@
       display: flex; align-items: end; justify-content: space-between; gap: 24px;
       margin-bottom: 22px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.14);
     }
-    .hero-journey-heading .eyebrow { margin-bottom: 8px; color: #c8d5cd; }
+    .hero-journey-heading .eyebrow { margin-bottom: 8px; color: #cfe4e4; }
     .hero-journey-heading h2 {
       margin: 0; max-width: 760px; color: var(--white);
       font-size: clamp(1.8rem, 3.2vw, 3rem); letter-spacing: -.035em;
@@ -265,13 +265,13 @@
     .hero-visual { position: relative; min-height: 610px; }
     .portrait-frame {
       position: absolute; inset: 24px 0 0 46px; overflow: hidden;
-      border-radius: 44px 44px 160px 44px; background: #173b60;
+      border-radius: 44px 44px 160px 44px; background: #123d7a;
       box-shadow: 0 34px 90px rgba(0,0,0,.28);
     }
     .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .portrait-frame::after {
       content: ""; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,40,69,.32), transparent 45%);
+      background: linear-gradient(to top, rgba(18, 61, 122,.32), transparent 45%);
     }
     .credential-card {
       position: absolute; left: 0; bottom: 22px; z-index: 2; width: min(330px, 75%);
@@ -317,7 +317,7 @@
     .services-layout > div { position: relative; z-index: 1; }
     .pain-visual {
       position: relative; min-height: 670px; border-radius: 44px; overflow: hidden;
-      background: linear-gradient(155deg, var(--navy), #244d70);
+      background: linear-gradient(155deg, var(--navy), #1d5091);
       box-shadow: var(--shadow);
     }
     .pain-visual::before {
@@ -331,7 +331,7 @@
       color: var(--white); font-family: "Montserrat", sans-serif; font-size: 1.5rem;
       font-weight: 700; line-height: 1.25;
     }
-    .pain-caption span { display: block; margin-top: 10px; color: #c8d5cd; font-family: "Lato", sans-serif; font-size: .96rem; font-weight: 400; }
+    .pain-caption span { display: block; margin-top: 10px; color: #cfe4e4; font-family: "Lato", sans-serif; font-size: .96rem; font-weight: 400; }
     .service-carousel {
       position: relative; margin-top: 24px; padding: 0 58px;
     }
@@ -372,17 +372,17 @@
     }
     .service-carousel-arrow {
       position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
-      width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(13,40,69,.12);
+      width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(18, 61, 122,.12);
       background: rgba(255,255,255,.56); color: var(--navy);
       display: grid; place-items: center; cursor: pointer;
-      box-shadow: 0 10px 24px rgba(13,40,69,.10); backdrop-filter: blur(8px);
+      box-shadow: 0 10px 24px rgba(18, 61, 122,.10); backdrop-filter: blur(8px);
       transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
     }
     .service-carousel-arrow:hover {
       background: rgba(255,255,255,.82); transform: translateY(-50%) scale(1.04);
-      box-shadow: 0 14px 28px rgba(13,40,69,.14);
+      box-shadow: 0 14px 28px rgba(18, 61, 122,.14);
     }
-    .service-carousel-arrow:focus-visible { outline: 2px solid rgba(13,40,69,.35); outline-offset: 2px; }
+    .service-carousel-arrow:focus-visible { outline: 2px solid rgba(18, 61, 122,.35); outline-offset: 2px; }
     .service-carousel-prev { left: 0; }
     .service-carousel-next { right: 0; }
     .service-carousel-arrow svg { width: 18px; height: 18px; }
@@ -391,7 +391,7 @@
     /* Inset watermark content so text does not sit against image edges */
     .services-layout {
       padding: 42px 38px 50px;
-      border: 1px solid rgba(13,40,69,.13);
+      border: 1px solid rgba(18, 61, 122,.13);
       border-radius: 30px;
       background: rgba(255,255,255,.18);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.22);
@@ -466,10 +466,10 @@
       content: attr(data-letter); position: absolute; right: -12px; bottom: -45px;
       color: rgba(255,255,255,.055); font-family: "Montserrat", sans-serif; font-size: 12rem; font-weight: 800;
     }
-    .rrr-number { display: block; margin-bottom: 72px; color: #b9c9bf; font-family: "Montserrat", sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
+    .rrr-number { display: block; margin-bottom: 72px; color: #a9d2cf; font-family: "Montserrat", sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
     .rrr-card h3 { font-size: 1.75rem; }
     .rrr-card p { position: relative; z-index: 1; color: rgba(255,255,255,.72); }
-    .rrr-card strong { position: relative; z-index: 1; display: block; margin-top: 22px; color: #c9d6ce; font-family: "Montserrat", sans-serif; font-size: .78rem; }
+    .rrr-card strong { position: relative; z-index: 1; display: block; margin-top: 22px; color: #cfe4e4; font-family: "Montserrat", sans-serif; font-size: .78rem; }
 
     /* Conditions */
     .conditions-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: start; }
@@ -514,7 +514,7 @@
     .fee-points li { margin-bottom: 7px; }
     .fees-small-print {
       max-width: 920px; margin: 24px 0 0; padding-top: 16px;
-      border-top: 1px solid rgba(13,40,69,.12); color: rgba(45,65,78,.72);
+      border-top: 1px solid rgba(18, 61, 122,.12); color: rgba(45,65,78,.72);
       font-size: .78rem; line-height: 1.65;
     }
 
@@ -553,12 +553,12 @@
     .dialog-image { width: 100%; max-height: calc(100vh - 90px); object-fit: contain; background: var(--white); }
     .dialog-close {
       position: absolute; right: 13px; top: 13px; width: 42px; height: 42px; display: grid; place-items: center;
-      border: 0; border-radius: 50%; background: rgba(13,40,69,.9); color: var(--white); font-size: 1.35rem; cursor: pointer;
+      border: 0; border-radius: 50%; background: rgba(18, 61, 122,.9); color: var(--white); font-size: 1.35rem; cursor: pointer;
     }
 
     /* Location & contact */
     .location-layout { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 660px; }
-    .location-map { position: relative; min-height: 660px; overflow: hidden; background: #dce5df; }
+    .location-map { position: relative; min-height: 660px; overflow: hidden; background: #d9eaea; }
     .location-map iframe {
       display: block; width: 100%; height: 100%; min-height: 660px;
       border: 0;
@@ -635,13 +635,13 @@
       border-radius: 30px; background: var(--sage); box-shadow: var(--soft-shadow);
     }
     .cta-band h2 { margin-bottom: 7px; font-size: clamp(2.1rem, 4vw, 3.55rem); }
-    .cta-band p { margin: 0; color: rgba(13,40,69,.76); }
+    .cta-band p { margin: 0; color: rgba(18, 61, 122,.76); }
 
-    footer { padding: 58px 24px calc(30px + env(safe-area-inset-bottom)); background: #081d30; color: rgba(255,255,255,.68); }
+    footer { padding: 58px 24px calc(30px + env(safe-area-inset-bottom)); background: #0b2a52; color: rgba(255,255,255,.68); }
     .footer-inner { max-width: var(--max); margin: auto; }
     .footer-top { display: grid; grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 26px; padding-bottom: 38px; }
     .footer-logo { width: 300px; padding: 12px 18px; border-radius: 16px; background: var(--white); }
-    .footer-tag { margin-top: 14px; color: #c5d3ca; font-family: "Montserrat", sans-serif; font-size: .69rem; letter-spacing: .2em; text-transform: uppercase; }
+    .footer-tag { margin-top: 14px; color: #c2ddda; font-family: "Montserrat", sans-serif; font-size: .69rem; letter-spacing: .2em; text-transform: uppercase; }
     .footer-links { display: flex; flex-wrap: wrap; align-content: start; justify-content: center; gap: 14px 24px; }
     .footer-links a { color: rgba(255,255,255,.78); text-underline-offset: 4px; }
     .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; gap: 8px 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.13); font-size: .78rem; }
@@ -662,7 +662,7 @@
         z-index: 120; display: none;
         max-height: calc(100dvh - var(--header-height) - 28px); overflow-y: auto; overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch; flex-direction: column; align-items: stretch;
-        gap: 0; padding: 18px; background: #ffffff; border: 1px solid rgba(13, 40, 69, .12); border-radius: 22px;
+        gap: 0; padding: 18px; background: #ffffff; border: 1px solid rgba(18, 61, 122, .12); border-radius: 22px;
         box-shadow: var(--shadow);
       }
       .nav-links.open { display: flex; }
@@ -886,11 +886,11 @@
       min-height: 52px; padding: 13px 20px; border: 1px solid rgba(255,255,255,.22);
       border-radius: 999px; color: var(--white); text-decoration: none;
       font-family: "Montserrat", sans-serif; font-size: .78rem; font-weight: 800;
-      letter-spacing: .02em; box-shadow: 0 16px 38px rgba(13,40,69,.28);
+      letter-spacing: .02em; box-shadow: 0 16px 38px rgba(18, 61, 122,.28);
       transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
       backdrop-filter: blur(12px);
     }
-    .floating-action:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(13,40,69,.34); }
+    .floating-action:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(18, 61, 122,.34); }
     .floating-action::before { font-size: 1rem; line-height: 1; }
     .floating-action-book { background: var(--navy); }
     .floating-action-book::before { content: "↗"; }
@@ -921,7 +921,7 @@
       width: 52px; height: 52px; display: grid; place-items: center;
       border-radius: 16px; background: linear-gradient(135deg, var(--navy), var(--sage-dark));
       color: var(--white); font-family: "Montserrat", sans-serif; font-size: .95rem; font-weight: 800; letter-spacing: .08em;
-      box-shadow: 0 12px 28px rgba(13,40,69,.14);
+      box-shadow: 0 12px 28px rgba(18, 61, 122,.14);
     }
     .body-map-brand-text strong {
       display: block; color: var(--navy); font-family: "Montserrat", sans-serif;
@@ -944,7 +944,7 @@
     .body-figure-card {
       padding: 26px 24px 24px; border-radius: 28px;
       background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(220,229,223,.54));
-      border: 1px solid rgba(13,40,69,.10);
+      border: 1px solid rgba(18, 61, 122,.10);
       min-height: 100%;
     }
     .body-figure-header {
@@ -959,7 +959,7 @@
     }
     .body-figure-image {
       display: block; width: 100%; height: auto;
-      filter: drop-shadow(0 10px 24px rgba(13,40,69,.08));
+      filter: drop-shadow(0 10px 24px rgba(18, 61, 122,.08));
       border-radius: 18px;
     }
     .injury-marker {
@@ -970,8 +970,8 @@
     }
     .injury-marker::before {
       content: ""; width: 18px; height: 18px; border-radius: 50%;
-      border: 2px solid rgba(13,40,69,.72);
-      box-shadow: 0 0 0 5px rgba(255,255,255,.84), 0 0 0 9px rgba(83,110,97,.48);
+      border: 2px solid rgba(18, 61, 122,.72);
+      box-shadow: 0 0 0 5px rgba(255,255,255,.84), 0 0 0 9px rgba(19, 138, 133,.48);
       opacity: .08; transition: opacity .18s ease, transform .18s ease, box-shadow .18s ease;
     }
     .injury-marker:hover,
@@ -983,7 +983,7 @@
     .injury-marker:focus-visible::before,
     .injury-marker.is-active::before {
       opacity: 1; transform: scale(1.05);
-      box-shadow: 0 0 0 5px rgba(255,255,255,.92), 0 0 0 10px rgba(83,110,97,.62), 0 10px 20px rgba(13,40,69,.18);
+      box-shadow: 0 0 0 5px rgba(255,255,255,.92), 0 0 0 10px rgba(19, 138, 133,.62), 0 10px 20px rgba(18, 61, 122,.18);
     }
     .marker-shoulder-l { top: 20.32%; left: 29.98%; }
     .marker-elbow-l { top: 35.20%; left: 25.10%; }
@@ -997,8 +997,8 @@
     .marker-hamstring-back-r { top: 58.6%; left: 60.8%; }
     .body-map-popup {
       position: absolute; z-index: 8; width: min(330px, calc(100vw - 88px));
-      padding: 22px 22px 20px; border-radius: 24px; border: 1px solid rgba(13,40,69,.12);
-      background: rgba(255,255,255,.98); box-shadow: 0 24px 60px rgba(13,40,69,.18);
+      padding: 22px 22px 20px; border-radius: 24px; border: 1px solid rgba(18, 61, 122,.12);
+      background: rgba(255,255,255,.98); box-shadow: 0 24px 60px rgba(18, 61, 122,.18);
       opacity: 0; transform: translateY(10px); pointer-events: none;
       transition: opacity .18s ease, transform .18s ease;
     }
@@ -1008,7 +1008,7 @@
     }
     .body-map-popup::after {
       content: ""; position: absolute; width: 18px; height: 18px; left: var(--popup-arrow-left, 22px); top: 26px;
-      background: var(--white); border-left: 1px solid rgba(13,40,69,.12); border-bottom: 1px solid rgba(13,40,69,.12);
+      background: var(--white); border-left: 1px solid rgba(18, 61, 122,.12); border-bottom: 1px solid rgba(18, 61, 122,.12);
       transform: translateX(-50%) rotate(45deg);
     }
     .body-map-popup-label {
@@ -1039,11 +1039,11 @@
     .location-signature::before {
       content: ""; width: 7px; height: 7px; flex: 0 0 auto;
       border: 2px solid currentColor; border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(83,110,97,.10);
+      box-shadow: 0 0 0 4px rgba(19, 138, 133,.10);
     }
     .hero > .location-signature {
       position: relative; z-index: 2; margin-top: 0; padding: 18px 24px 24px;
-      border-top-color: rgba(255,255,255,.13); color: #c8d5cd;
+      border-top-color: rgba(255,255,255,.13); color: #cfe4e4;
     }
     .hero > .location-signature::before,
     .section-navy > .location-signature::before { box-shadow: 0 0 0 4px rgba(255,255,255,.08); }
@@ -1051,11 +1051,11 @@
       margin-top: 0; padding: 15px 24px 18px; color: var(--sage-dark);
     }
     .section-navy > .location-signature {
-      border-top-color: rgba(255,255,255,.14); color: #c9d6ce;
+      border-top-color: rgba(255,255,255,.14); color: #cfe4e4;
     }
     .location-layout > .location-signature {
       grid-column: 1 / -1; max-width: none; width: 100%; margin: 0; padding: 17px 24px;
-      border-top: 1px solid rgba(255,255,255,.12); background: #081d30; color: #c9d6ce;
+      border-top: 1px solid rgba(255,255,255,.12); background: #0b2a52; color: #cfe4e4;
     }
 
     @media (max-width: 1040px) {
@@ -1268,7 +1268,7 @@
     .services-physio-button {
       white-space: nowrap;
       background: rgba(255,255,255,.82);
-      box-shadow: 0 12px 30px rgba(13,40,69,.10);
+      box-shadow: 0 12px 30px rgba(18, 61, 122,.10);
     }
 
     @media (max-width: 820px) {
@@ -1489,7 +1489,7 @@
     }
     .physio-link-banner .eyebrow {
       margin-bottom: 8px;
-      color: #d7e2dc;
+      color: #d4e8e8;
     }
     .physio-link-banner h2 {
       margin: 0;
@@ -1533,10 +1533,10 @@
 
     /* Light treatment for the 3 R's section */
     .section-approach-light {
-      background: linear-gradient(180deg, #ffffff 0%, #f4f7f5 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f2f8f8 100%);
     }
     .section-approach-light .approach-inner {
-      border: 1px solid rgba(13, 40, 69, .10);
+      border: 1px solid rgba(18, 61, 122, .10);
       background: rgba(255, 255, 255, .42);
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6);
     }
@@ -1547,9 +1547,9 @@
     .section-approach-light .rrr-card {
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, .82);
-      box-shadow: 0 12px 32px rgba(13, 40, 69, .06);
+      box-shadow: 0 12px 32px rgba(18, 61, 122, .06);
     }
-    .section-approach-light .rrr-card::after { color: rgba(13, 40, 69, .05); }
+    .section-approach-light .rrr-card::after { color: rgba(18, 61, 122, .05); }
     .section-approach-light .rrr-card h3 { color: var(--navy); }
     .section-approach-light .rrr-card p { color: var(--muted); }
     .section-approach-light .rrr-number { color: var(--green); }
@@ -1606,7 +1606,7 @@
     /* Rehab programming page */
     .page-hero { padding: 78px 24px 82px; background: var(--navy); color: var(--white); }
     .page-hero-inner { max-width: var(--max); margin: auto; }
-    .page-hero .eyebrow { color: #c8d5cd; }
+    .page-hero .eyebrow { color: #cfe4e4; }
     .page-hero h1 { color: var(--white); margin-bottom: 18px; font-size: clamp(2.3rem, 5vw, 4.1rem); }
     .page-hero p { max-width: 720px; margin: 0; color: rgba(255,255,255,.76); font-size: clamp(1.04rem, 1.5vw, 1.22rem); }
     .prose { max-width: 760px; }
@@ -1632,21 +1632,30 @@
       font-weight: 800; letter-spacing: -.02em;
     }
     .rehab-note {
-      margin-top: 34px; padding: 22px 24px; border: 1px dashed rgba(13,40,69,.24);
+      margin-top: 34px; padding: 22px 24px; border: 1px dashed rgba(18, 61, 122,.24);
       border-radius: 18px; background: rgba(255,255,255,.6); color: var(--muted); font-size: .92rem;
     }
 
     @media (max-width: 900px) { .format-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 560px) { .format-grid { grid-template-columns: 1fr; } }
     </style>
-<!-- TODO: reinstate telephone, hasMap and address in the MedicalBusiness schema once a new practice location and booking system are confirmed. -->
+<!-- TODO: reinstate telephone in the MedicalBusiness schema once the practice number is confirmed. -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "George Gauntlett Physio",
   "url": "https://www.georgegauntlettphysio.co.uk/",
-  "description": "Chartered physiotherapist George Gauntlett provides musculoskeletal assessment, treatment and rehabilitation in Bradford-on-Avon, Wiltshire.",
-  "areaServed": "Bradford-on-Avon, Wiltshire",
+  "description": "Chartered physiotherapist George Gauntlett provides musculoskeletal assessment, treatment and rehabilitation at Hartley Farm, Winsley, near Bradford-on-Avon, Wiltshire.",
+  "areaServed": "Winsley, Bradford-on-Avon, Wiltshire",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 8, Hartley Farm",
+    "addressLocality": "Winsley",
+    "addressRegion": "Wiltshire",
+    "postalCode": "BA15 2JB",
+    "addressCountry": "GB"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Unit+8%2C+Hartley+Farm%2C+Winsley%2C+BA15+2JB",
   "medicalSpecialty": "Physiotherapy",
   "email": "george@georgegauntlettphysio.co.uk",
   "priceRange": "££",
@@ -1686,18 +1695,18 @@ body.booking-modal-open { overflow: hidden; }
   border: 1px solid rgba(255,255,255,.5);
   border-radius: 28px;
   background: var(--white, #fff);
-  color: var(--ink, #1d3a4b);
+  color: var(--ink, #17324a);
   box-shadow: 0 30px 90px rgba(7,29,51,.34);
 }
 .booking-modal-panel h2 {
   margin: 0 44px 12px 0;
-  color: var(--navy, #1a3a56);
+  color: var(--navy, #123d7a);
   font-size: clamp(1.9rem, 5vw, 3rem);
 }
 .booking-modal-intro {
   max-width: 520px;
   margin: 0 0 26px;
-  color: var(--muted, #6f7c84);
+  color: var(--muted, #60758a);
 }
 .booking-modal-close {
   position: absolute;
@@ -1707,10 +1716,10 @@ body.booking-modal-open { overflow: hidden; }
   height: 42px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line, rgba(13,40,69,.14));
+  border: 1px solid var(--line, rgba(18, 61, 122,.14));
   border-radius: 50%;
-  background: var(--warm, #faf6f1);
-  color: var(--navy, #1a3a56);
+  background: var(--warm, #f4f9f9);
+  color: var(--navy, #123d7a);
   font-size: 1.55rem;
   line-height: 1;
   cursor: pointer;
@@ -1744,29 +1753,29 @@ body.booking-modal-open { overflow: hidden; }
 .desktop-phone-number {
   margin-top: 16px;
   padding: 18px 20px;
-  border: 1px solid var(--line, rgba(13,40,69,.14));
+  border: 1px solid var(--line, rgba(18, 61, 122,.14));
   border-radius: 18px;
-  background: var(--sage-pale, #e7efea);
+  background: var(--sage-pale, #e6f2f2);
 }
 .desktop-phone-number span,
 .desktop-phone-number strong { display: block; }
 .desktop-phone-number > span:first-child {
-  color: var(--muted, #6f7c84);
+  color: var(--muted, #60758a);
   font-size: .82rem;
 }
 .desktop-phone-number strong {
   margin-top: 2px;
-  color: var(--navy, #1a3a56);
+  color: var(--navy, #123d7a);
   font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
 }
 .copy-phone-button {
   margin-top: 11px;
   padding: 8px 13px;
-  border: 1px solid rgba(13,40,69,.22);
+  border: 1px solid rgba(18, 61, 122,.22);
   border-radius: 999px;
   background: var(--white, #fff);
-  color: var(--navy, #1a3a56);
+  color: var(--navy, #123d7a);
   font-family: "Montserrat", sans-serif;
   font-size: .72rem;
   font-weight: 800;
@@ -1775,7 +1784,7 @@ body.booking-modal-open { overflow: hidden; }
 .copy-phone-status {
   min-height: 1.2em;
   margin-top: 7px;
-  color: var(--sage-dark, #6a8275);
+  color: var(--sage-dark, #138a85);
   font-size: .78rem;
 }
 .visually-hidden {
@@ -1823,7 +1832,7 @@ body.booking-modal-open { overflow: hidden; }
         z-index: 120; display: none;
         max-height: calc(100dvh - var(--header-height) - 28px); overflow-y: auto; overscroll-behavior: contain;
         -webkit-overflow-scrolling: touch; flex-direction: column; align-items: stretch;
-        gap: 0; padding: 18px; background: #ffffff; border: 1px solid rgba(13, 40, 69, .12); border-radius: 22px;
+        gap: 0; padding: 18px; background: #ffffff; border: 1px solid rgba(18, 61, 122, .12); border-radius: 22px;
         box-shadow: var(--shadow);
       }
       .nav-links.open { display: flex; }
@@ -1855,7 +1864,7 @@ body.booking-modal-open { overflow: hidden; }
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <div aria-label="Quick actions" class="floating-actions">
-<a aria-controls="booking-modal" aria-haspopup="dialog" aria-label="Book online" class="floating-action floating-action-book" data-booking-trigger="" href="#booking-modal">Book online</a>
+<a aria-label="Book online" class="floating-action floating-action-book" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book online</a>
 <a aria-label="Get in contact and start the conversation" class="floating-action floating-action-contact" href="index.html#enquiry-form">Get in Contact</a>
 </div>
 <header class="site-header">
@@ -1884,7 +1893,7 @@ body.booking-modal-open { overflow: hidden; }
 <circle cx="12" cy="12" r="4.25"></circle>
 <circle cx="17.4" cy="6.7" r="1"></circle>
 </svg></a>
-<a aria-controls="booking-modal" aria-haspopup="dialog" class="button button-primary" data-booking-trigger="" href="#booking-modal">Book an appointment</a></nav>
+<a class="button button-primary" href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book an appointment</a></nav>
 </div>
 </header>
 <main id="main">
@@ -1905,7 +1914,7 @@ body.booking-modal-open { overflow: hidden; }
 <p>This notice was last updated on <strong>15 August 2026</strong>.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-soft">
 <div class="section-inner">
@@ -1919,7 +1928,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <!-- TO CONFIRM (not shown to visitors): ICO registration number (format ZA123456). George should be registered with the Information Commissioner's Office as a controller of health data; insert the number here once confirmed. -->
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-white">
 <div class="section-inner">
@@ -1931,7 +1940,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <p>Information about your health is treated in law as <em>special category</em> data and is given additional protection. The enquiry form deliberately asks only for a brief outline rather than a full history, and you are asked not to include sensitive medical detail in it. A full history is taken in person at your appointment, where it can be recorded securely.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-soft">
 <div class="section-inner">
@@ -1949,7 +1958,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <p>Withdrawing marketing consent will never affect your enquiry, your appointment or your care.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-white">
 <div class="section-inner">
@@ -1973,7 +1982,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <!-- TO CONFIRM (not shown to visitors): whether any practice management, booking or accounting software is used that also holds patient data, and whether the new practice (once confirmed) holds records jointly. Add or remove entries above accordingly. -->
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-soft">
 <div class="section-inner">
@@ -1988,7 +1997,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <!-- TO CONFIRM (not shown to visitors): George should verify these retention periods against his current professional indemnity and CSP guidance, and against any policy the new practice (once confirmed) applies to records held on its premises. The figures above reflect common practice for private physiotherapy but should be his stated policy, not an assumption. -->
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-white">
 <div class="section-inner">
@@ -2008,7 +2017,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <p>If you are unhappy with how your information has been handled, please raise it with George first so it can be put right. You also have the right to complain to the Information Commissioner's Office at <a href="https://ico.org.uk/make-a-complaint/" rel="noopener noreferrer" target="_blank">ico.org.uk/make-a-complaint</a> or on 0303 123 1113.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-soft">
 <div class="section-inner">
@@ -2024,7 +2033,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <p>The site is hosted on GitHub Pages, which keeps standard server logs.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 
 <section class="section section-white">
 <div class="section-inner">
@@ -2034,7 +2043,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
 <p>This notice may be updated from time to time. The date at the top shows when it was last changed. Where a change materially affects how your information is used, you will be told directly.</p>
 </div>
 </div>
-<div aria-label="Practice location" class="location-signature">Bradford-on-Avon</div></section>
+<div aria-label="Practice location" class="location-signature">Hartley Farm, Winsley</div></section>
 </main>
 </main>
 <footer>
@@ -2547,22 +2556,7 @@ Email: <a href="mailto:george@georgegauntlettphysio.co.uk">george@georgegauntlet
       Array.prototype.forEach.call(revealElements, el => el.classList.add('visible'));
     }
 </script>
-<div aria-hidden="true" aria-labelledby="booking-modal-title" class="booking-modal" id="booking-modal" role="dialog">
-<div class="booking-modal-backdrop" data-close-booking-modal=""></div>
-<div class="booking-modal-panel" role="document">
-<button aria-label="Close booking options" class="booking-modal-close" data-close-booking-modal="" type="button">×</button>
-<p class="eyebrow">Booking options</p>
-<h2 id="booking-modal-title">How would you like to book?</h2>
-<!-- TODO: online booking is unavailable while the practice location is unconfirmed. Reinstate phone and online booking options once a new address/booking system is set. -->
-<p class="booking-modal-intro">Online booking is temporarily unavailable. Please get in touch and George will arrange your appointment.</p>
-<div class="booking-modal-options">
-<a class="button button-primary booking-option" href="index.html#enquiry-form">
-<span class="booking-option-title">Get in contact</span>
-<span class="booking-option-detail">George will reply to arrange your appointment</span>
-</a>
-</div>
-</div>
-</div><script id="booking-modal-script">
+<script id="booking-modal-script">
 (() => {
   const serviceDropdowns = Array.from(document.querySelectorAll('.nav-dropdown'));
   serviceDropdowns.forEach(dropdown => {
