@@ -39,12 +39,22 @@ Wait for DNS to propagate, then tick "Enforce HTTPS".
 
 ## Editing notes
 
-- Brand colours are the `:root` custom properties at the top of each page's
-  `<style>` block: navy `#123d7a`, teal `#138a85` (the `--green` / `--sage-*`
-  tokens still carry their old names), pale teal `#e6f2f2`. There is no build
-  step, so a colour change means editing every page.
+- The site mirrors the Rugby Robust page: navy `#0d1724`, pale blue `#a7d8f2`,
+  tints `#eef8fd`, lines `#dbe6ed`, set as `:root` custom properties at the top
+  of each page's `<style>` block (the `--green` / `--sage-*` tokens still carry
+  their old names from the previous palette). Accent text and icons use a
+  darker `#2b6d91` so they pass contrast on white, where Rugby Robust's own
+  `#78c5eb` only works against its dark backgrounds.
+- One typeface throughout, matching Rugby Robust:
+  `Inter, ui-sans-serif, system-ui, …`. No webfont is loaded, so it falls back
+  to the system UI font exactly as Rugby Robust does.
+- There is no build step, so a colour or font change means editing every page.
 - "How George can help" is the `.gg-services` block; its cards are `<details>`
   elements, so they open without JavaScript.
+- "Appointments and fees" is the `.gg-fees` block: two equal `minmax(0, 1fr)`
+  tracks, Health and Performance.
+- Favicons are generated from `images/logo.webp`; regenerate all three sizes
+  together if the logo changes.
 - Booking buttons open the Splose booking form in a pop-out (`#booking-dialog`).
   The iframe is lazy: its `src` is only set from `data-src` on first open, so
   Splose is not loaded on every page view. Each button keeps the real Splose
