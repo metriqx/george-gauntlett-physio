@@ -1997,7 +1997,7 @@ body.booking-modal-open { overflow: hidden; }
     .gg-icon svg { width: 28px; height: 28px; }
     .gg-track__title { margin: 0; color: var(--navy); font-size: clamp(1.6rem, 2.8vw, 2.1rem); line-height: 1; letter-spacing: .02em; text-transform: uppercase; }
     .gg-track__strap { margin: 8px 0 0; color: var(--sage-dark); font-size: .82rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-    .gg-appointments { display: grid; gap: 0; margin: 10px 0 26px; }
+    .gg-appointments { display: grid; gap: 0; margin: 10px 0 22px; }
     .gg-appointment { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; padding: 20px 2px; border-bottom: 1px solid var(--line); }
     .gg-appointment__name, .gg-service__name, .gg-package__name {
       margin: 0; color: var(--navy); font-weight: 800; letter-spacing: .02em; text-transform: uppercase;
@@ -2035,6 +2035,7 @@ body.booking-modal-open { overflow: hidden; }
     .gg-service__copy { margin: 5px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
     .gg-service__price { min-width: 72px; text-align: right; color: var(--navy); font-size: 1.2rem; font-weight: 800; line-height: 1.15; white-space: nowrap; }
     .gg-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .gg-actions--appointments { margin-top: 0; }
     .gg-btn {
       display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
       padding: 12px 20px; border: 1px solid transparent; border-radius: 999px;
@@ -2272,7 +2273,6 @@ Not sure which service you need? Start with an initial assessment. George can th
 <div>
 <p class="gg-appointment__name">Initial assessment</p>
 <div class="gg-time">60 mins</div>
-<div class="gg-appointment__actions"><a class="gg-btn gg-btn--primary gg-btn--small" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book now</a></div>
 </div>
 <div class="gg-price">&pound;75</div>
 </div>
@@ -2280,11 +2280,11 @@ Not sure which service you need? Start with an initial assessment. George can th
 <div>
 <p class="gg-appointment__name">Follow up</p>
 <div class="gg-time">60 mins</div>
-<div class="gg-appointment__actions"><a class="gg-btn gg-btn--primary gg-btn--small" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book now</a></div>
 </div>
 <div class="gg-price">&pound;65</div>
 </div>
 </div>
+<div class="gg-actions gg-actions--appointments"><a class="gg-btn gg-btn--primary" data-booking-open href="https://george-gauntlett-physio.splose.com/online-booking/658f9056-f91b-428e-a567-534beabd958e" rel="noopener noreferrer" target="_blank">Book now</a></div>
 
 <div class="gg-rebuild">
 <span class="gg-pill">Rebuild</span>
